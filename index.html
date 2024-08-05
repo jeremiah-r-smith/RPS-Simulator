@@ -27,9 +27,26 @@
             }
             let userGuess = prompt("Rock, Paper, or Scissors (Stop to End Game)");
             console.log(userGuess)
-            while (userGuess != "Rock" && userGuess != "Paper" && userGuess != "Scissors" && userGuess != "Stop")
+            while (userGuess != "Rock" 
+                && userGuess != "Paper" 
+                && userGuess != "Scissors" 
+                && userGuess != "Stop")
                 userGuess = prompt("Rock, Paper, or Scissors (Stop to End Game)");
+            if (userGuess == "Stop")
+                console.log("Goodbye");
             let computerGuess = getResponse();
+            console.log(computerGuess);
+            if (userGuess != computerGuess)
+                if ((userGuess == "Rock"     && computerGuess == "Scissors") 
+                ||  (userGuess == "Paper"    && computerGuess == "Rock")
+                ||  (userGuess == "Scissors" && computerGuess == "Paper"))
+                console.log("You win");
+                else
+                    console.log("You Lose");
+                     
+                
+            else
+                console.log("That's a draw!")
         </script>
     </body>
 </html>
