@@ -7,5 +7,29 @@
     </head>
 
     <body>
+        <script>
+            // Will return either Rock Paper or Scissors
+            function getResponse() 
+            {
+                let guess = Math.floor(Math.random() * 3) + 1;
+                switch(guess)
+                {
+                    case 1:
+                        return "Rock";
+                        break;
+                    case 2:
+                        return "Paper";
+                        break;
+                    case 3:
+                        return "Scissors";
+                        break;
+                }
+            }
+            let userGuess = prompt("Rock, Paper, or Scissors (Stop to End Game)");
+            console.log(userGuess)
+            while (userGuess != "Rock" && userGuess != "Paper" && userGuess != "Scissors" && userGuess != "Stop")
+                userGuess = prompt("Rock, Paper, or Scissors (Stop to End Game)");
+            let computerGuess = getResponse();
+        </script>
     </body>
 </html>
