@@ -25,28 +25,30 @@
                         break;
                 }
             }
-            let userGuess = prompt("Rock, Paper, or Scissors (Stop to End Game)");
-            console.log(userGuess)
-            while (userGuess != "Rock" 
-                && userGuess != "Paper" 
-                && userGuess != "Scissors" 
-                && userGuess != "Stop")
-                userGuess = prompt("Rock, Paper, or Scissors (Stop to End Game)");
-            if (userGuess == "Stop")
-                console.log("Goodbye");
-            let computerGuess = getResponse();
-            console.log(computerGuess);
-            if (userGuess != computerGuess)
-                if ((userGuess == "Rock"     && computerGuess == "Scissors") 
-                ||  (userGuess == "Paper"    && computerGuess == "Rock")
-                ||  (userGuess == "Scissors" && computerGuess == "Paper"))
-                console.log("You win");
-                else
-                    console.log("You Lose");
-                     
-                
-            else
-                console.log("That's a draw!")
+            let userGuess;
+            let computerGuess;
+                do
+                {
+                    userGuess = prompt("Rock, Paper, or Scissors");
+                    while (userGuess != "Rock" 
+                        && userGuess != "Paper" 
+                        && userGuess != "Scissors")
+                        userGuess = prompt("Rock, Paper, or Scissors");
+                    computerGuess = getResponse();
+                    if (userGuess != computerGuess)
+                    {
+                        if ((userGuess == "Rock"     && computerGuess == "Scissors") 
+                        ||  (userGuess == "Paper"    && computerGuess == "Rock")
+                        ||  (userGuess == "Scissors" && computerGuess == "Paper"))
+                            alert("You win");
+                        else
+                            alert("You Lose");
+                    }
+                    else
+                        console.log("That's a draw!");
+                }
+                while (confirm("Want to play again?"));
+                alert("Goodbye");
         </script>
     </body>
 </html>
